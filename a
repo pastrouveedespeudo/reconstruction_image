@@ -1,1 +1,121 @@
-a
+import cv2
+import numpy as np
+
+
+
+
+class image:
+
+
+    def trait(self, image):
+
+        self.image = image
+
+        liste = []
+        
+        im = cv2.imread(self.image)
+        for x in range(im.shape[0]):
+            for y in range(im.shape[1]):
+                if im[x,y].all() == np.array([0,0,0]).all():
+                    liste.append((x,y))
+                    
+        return liste
+
+
+
+    def liste(self, liste):
+        self.liste = liste
+
+        liste2 = []
+
+        c = 0
+        for i in self.liste[:-1]:
+            x = i[0] - self.liste[c+1][0]
+            y = i[1] - self.liste[c+1][1]
+
+            if x <= -8 and y <= -8:
+                liste2.append((i[0],i[1],
+                               self.liste[c+1][0],
+                               self.liste[c+1][1]))
+
+
+            c+=1
+
+        #print(liste2)
+
+
+    def essais(self, image):
+        self.image = image
+
+        im = cv2.imread(self.image)
+        im[43:100,40] = 0,0,255
+        im[88:100,118] = 0,255,255
+
+        #cv2.imshow("image.jpg", im)
+
+
+
+
+class traitement:
+    
+    def regularité(self, liste, image):
+        self.liste = liste
+        self.image = image
+
+
+        im = cv2.imread(self.image)
+        
+        a = self.liste[0]
+        b = self.liste[-1]
+
+        im[a[0]:a[0] + 25, a[1]] = 255,255,0
+        im[a[0] - 20:a[0], a[1]] = 255,255,0
+
+        im[b[0]:b[0] + 25, b[1]] = 255,255,0
+        im[b[0] - 20:b[0], b[1]] = 255,255,0
+
+        im[a[0] + 25, a[1]] = 0,0,255
+        im[b[0] + 25, b[1]] = 0,0,255
+
+   
+
+        
+        
+        cv2.imshow("image.jpg", im)
+   
+
+        
+
+ 
+        print(self.liste)
+        print(a,b)
+        
+
+if __name__ == "__main__":
+    
+    image = image()
+    traitement = traitement()
+
+    
+    liste = image.trait("trait.png")
+    image.liste(liste)
+
+    
+    traitement.regularité(liste, "trait.png")
+
+    
+    image.essais("trait.png")
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
