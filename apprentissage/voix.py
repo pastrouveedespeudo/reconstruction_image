@@ -12,3 +12,5 @@ class demande_voix:
         demande = input("décrit moi {} ? ".format(self.mot))
         #demande = input("de quoi est fait {} ? ".format(self.mot))
         #on peut mettre un ou une ou des ou les
+
+        return demande
