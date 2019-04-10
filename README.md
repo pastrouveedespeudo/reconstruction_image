@@ -1,7 +1,3 @@
 # reconstruction_image
 
-faudrait en finir un au moins de projet et apres couleur_pensé mais c hyper du jcrois faut faire la suite de carbonacci ou un truk du genre
-
-et apres ce putin de alter user django CREATEDB c ce pution de portaudio please build the portaudio c paaaaaaaas ma journée ca
-
-jvai le faire a lecrit du coup ca va etre trop cool
+jvoulais qu'on le dise a l'oral et tout par contre reste dans ce que tu sais faire va pas faire des truk que tu sais pas faire ou qui prend des heures comme les haarcascades
