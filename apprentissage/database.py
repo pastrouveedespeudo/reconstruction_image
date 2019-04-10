@@ -1,11 +1,30 @@
-import psycopg2
+import mysql.connector
+from config import *
 
 
-conn = psycopg2.connect(database=DATABASE,
-                                user=USER,
-                                host=HOST,
-                                password=PASSWORD)
+class connexion_database:
+    def connexion(self):
+        
+        self.connexion = mysql.connector.connect(host=HOST,
+                                                 user=USER,
+                                                 password=PASSWORD)
+        self.cursor = self.connexion.cursor()
 
-        cursor = conn.cursor()
-                    cursor.execute("INSERT INTO mes_aliments_categorie(name_categorie) VALUES ('{0}')".format(str(self.liste[c])))
-            conn.commit()
+        
+class table:
+    def creation_table(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""""")
+        self.connexion.commit()
+
+class insertion_table:
+    def insertion(self):
+        connexion_database.connexion(self)
+
+
+class visualisation_table:
+    def visualisation(self):
+        connexion_database.connexion(self)
+
+    
+
