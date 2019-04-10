@@ -15,8 +15,9 @@ class main:
         traitement = traitement_phrase.traitement_nm(self, demande)
 
         for i in traitement:
-            demande_voix.retour_reponse(self, i)
-
+            reponse = demande_voix.retour_reponse(self, i)
+            liste = traitement_reponse.nombre(self, reponse)
+            traitement_reponse.nm(self, reponse, liste)
 
 
 
