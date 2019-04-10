@@ -1,6 +1,7 @@
 import cv2
 
 #notion de couleur et de taille
+
 class dessin:
 
     def ouverture_image(self, image):
