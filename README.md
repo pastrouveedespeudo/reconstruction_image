@@ -4,3 +4,4 @@ faudrait en finir un au moins de projet et apres couleur_pensé mais c hyper du 
 
 et apres ce putin de alter user django CREATEDB c ce pution de portaudio please build the portaudio c paaaaaaaas ma journée ca
 
+jvai le faire a lecrit du coup ca va etre trop cool
