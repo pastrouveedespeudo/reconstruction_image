@@ -2,6 +2,11 @@ from voix import *
 from traitement_phrase import *
 
 
+#une voiture
+#de quoi est fait une voiture
+#de 4 roues, de 6 vitres, d'une antenne et d'un corps
+
+
 
 class main:
     def question(self):
