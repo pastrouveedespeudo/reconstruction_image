@@ -1,7 +1,5 @@
 # reconstruction_image
 
-jvoulais qu'on le dise a l'oral et tout par contre reste dans ce que tu sais faire va pas faire des truk que tu sais pas faire ou qui prend des heures comme les haarcascades
+gg 3 boucles infinis a cause d'une meme variable ca donne 20 min a se dire que la connexion est nul
 
-roue = truk circulaire synonyme jsp quil y a rond et on stock tous les synonymes 
-
-truk carre et truk rond c mtn
+ok apprend le code pcque c trop long
