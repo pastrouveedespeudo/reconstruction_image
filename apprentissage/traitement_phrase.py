@@ -45,7 +45,7 @@ class traitement_reponse:
                 i = int(i)
                 if i == int(i):
                     indexage = self.phrase.index(str(i))
-                    liste[indexage].append((int(i), "int"))
+                    liste[indexage].append([int(i), "int"])
             except:
                 pass
 
@@ -76,10 +76,11 @@ class traitement_reponse:
 
                 if nm >= 0:
                     indexage = self.phrase.index(i)
-                    self.liste[indexage].append((j, "nm"))
+                    self.liste[indexage].append([j, "Nom"])
             else:
                 pass
-                       
+
+        print(self.liste)
         return self.liste
 
         #a la fin faire: liste2 = [i for i in liste if i != []]
