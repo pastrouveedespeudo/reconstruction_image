@@ -12,7 +12,7 @@ class traitement_phrase:
         liste_nm = []
 
         for i in self.phrase:
-
+         
             path = "https://www.le-dictionnaire.com/definition/{}"
             path = path.format(i.lower())
             requete = requests.get(path)
@@ -24,7 +24,7 @@ class traitement_phrase:
 
             if nm >= 0:
                 liste_nm.append(i)
-
+       
         return liste_nm
 
 class traitement_reponse:
@@ -73,13 +73,39 @@ class traitement_reponse:
                 propriete = soup.find("div", {"class":"defbox"})
 
                 nm = str(propriete).find("Nom commun")
+                numeral = str(propriete).find("Forme d’adjectif numéral")
 
                 if nm >= 0:
                     indexage = self.phrase.index(i)
                     self.liste[indexage].append([j, "Nom"])
-            else:
-                pass
+                    
+                elif numeral >= 0:
+                    indexage = self.phrase.index(i)
+                    self.liste[indexage].append([j, "numeral"])
 
+
+
+                    
+            else:
+                path = "https://www.le-dictionnaire.com/definition/{}"
+                path = path.format(i.lower())
+                requete = requests.get(path)
+                page = requete.content
+                soup = BeautifulSoup(page, "html.parser")      
+                propriete = soup.find("div", {"class":"defbox"})
+
+                nm = str(propriete).find("Nom commun")
+                numeral = str(propriete).find("Forme d’adjectif numéral")
+
+                if nm >= 0:
+                    indexage = self.phrase.index(i)
+                    self.liste[indexage].append([i, "Nom"])
+                    
+                elif numeral >= 0:
+                    indexage = self.phrase.index(i)
+                    self.liste[indexage].append([i, "numeral"])
+
+                    
         print(self.liste)
         return self.liste
 
@@ -87,9 +113,7 @@ class traitement_reponse:
 
 
 
-
-
-
+    
 
 
 
