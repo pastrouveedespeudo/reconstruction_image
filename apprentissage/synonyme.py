@@ -8,7 +8,7 @@ class synonyme:
     def recherche_syno(self, mot):
         
         self.mot = mot
-        print(self.mot)
+   
         
         liste = [[],[],[],[],[],[],[],[],[],[],[],[],[],
                  [],[],[],[],[],[],[],[],[],[],[],[],[],
@@ -93,8 +93,8 @@ class synonyme:
                 liste_adj2.append(i)
 
                 
-        print(liste_nom2)
-        print(liste_adj2)
+        #print(liste_nom2)
+        #print(liste_adj2)
                 
           
 
