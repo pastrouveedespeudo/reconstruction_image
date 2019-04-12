@@ -4,6 +4,12 @@ from bs4 import BeautifulSoup
 
 class traitement_phrase:
 
+    def trait(self, phrase):
+        self.phrase = phrase
+        self.phrase = self.phrase.split()
+   
+        return self.phrase
+
     def traitement_nm(self, phrase):
         self.phrase = phrase
 
@@ -119,7 +125,9 @@ class traitement_reponse:
 
 
 
-
+class final:
+    def traitement(self, liste):
+        self.liste = liste
 
 
 
