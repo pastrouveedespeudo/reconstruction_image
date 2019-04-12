@@ -45,7 +45,7 @@ class insertion_table:
         connexion_database.connexion(self)
         
         self.cursor.execute("""insert into forme_geometrique
-                            (rond) value('circulaire');
+                            (rectangle) value('caisse');
                 
                             """)
         self.connexion.commit()
