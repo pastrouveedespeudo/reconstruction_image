@@ -14,6 +14,7 @@ class sens_mot:
 
 
         for i in phrase:
+            print(i)
             if i == []:
                 pass
             else:
@@ -31,21 +32,83 @@ class sens_mot:
                             if j == None:
                                 pass
                             else:
-                                print(j)
+                          
                                 recherche = str(propriete).find(str(j))
-                                
+                                #dessin
+
+                                #caisse
+                                #rond
                                 if recherche >= 0:
-                                   
+                                    
                                     synonyme.recherche_syno(self,j)
 
 
                     
-                    #on cherche dans database
-                    #synonyme
-                    #on stocjk
-                    #et voila ca part en couille
-                    #detection de forme apres avoir faire un gray treshold
-                    #find contour
+                    #stockage des synonymes
+                    #plus rond dans circulaire
+
+    def localisation(self, liste, reponse):
+        self.reponse = reponse
+        self.liste = liste
+  
+        dessus = ['sur']
+        dessous = []
+        meme_pos = ['juxtaposées']
+        
+
+
+        
+        for i in self.reponse:
+            if i == []:
+                pass
+            else:
+                for j in dessus:
+         
+                    if i== j:
+                        indexage = self.reponse.index(i)
+                        self.liste[indexage].append('dessus')
+                        
+                for k in dessous:
+                    if i == j:
+                        indexage = self.reponse.index(i)
+                        self.liste[indexage].append('dessus')
+                        
+                for l in meme_pos:
+                    if i == j:
+                        indexage = self.reponse.index(i)
+                        self.liste[indexage].append('meme_pos')
+
+        print(self.liste)
+        return self.liste
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
