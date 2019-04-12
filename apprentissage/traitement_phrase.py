@@ -112,7 +112,7 @@ class traitement_reponse:
                     self.liste[indexage].append([i, "numeral"])
 
                     
-        print(self.liste)
+     
         return self.liste
 
         #a la fin faire: liste2 = [i for i in liste if i != []]
@@ -120,13 +120,7 @@ class traitement_reponse:
 
 
     
-
-
-
-
-
-class final:
-    def traitement(self, liste):
+    def traitement_nombre(self, liste):
         self.liste = liste
 
 
