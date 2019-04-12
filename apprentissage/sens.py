@@ -12,9 +12,9 @@ class sens_mot:
 
         forme = visualisation_table.visualisation(self)
 
-
-        for i in phrase:
-            print(i)
+     
+        for i in self.phrase:
+  
             if i == []:
                 pass
             else:
@@ -39,13 +39,14 @@ class sens_mot:
                                 #caisse
                                 #rond
                                 if recherche >= 0:
-                                    
                                     synonyme.recherche_syno(self,j)
+                                    indexage = self.phrase.index(i)
+                                    self.phrase[indexage][0].append(j)
 
-
-                    
                     #stockage des synonymes
                     #plus rond dans circulaire
+
+
 
     def localisation(self, liste, reponse):
         self.reponse = reponse
@@ -56,8 +57,6 @@ class sens_mot:
         meme_pos = ['juxtaposées']
         
 
-
-        
         for i in self.reponse:
             if i == []:
                 pass
@@ -78,7 +77,7 @@ class sens_mot:
                         indexage = self.reponse.index(i)
                         self.liste[indexage].append('meme_pos')
 
-        print(self.liste)
+       
         return self.liste
 
 
