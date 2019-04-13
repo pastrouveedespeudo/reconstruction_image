@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 from database import *
 from synonyme import *
-
+from traitement_phrase import *
 
 
 class sens_mot:
