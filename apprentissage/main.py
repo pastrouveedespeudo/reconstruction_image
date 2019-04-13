@@ -28,7 +28,7 @@ class main:
             liste1 = traitement_reponse.nm(self, reponse, liste)
             sens_mot.sens(self, liste1)
             traitement_rep = sens_mot.localisation(self, liste1, split)
-
+            sens_mot.association_morceau_phrase(self, traitement_rep, split)
             
         dessin.traitement(self, traitement_rep)
   
