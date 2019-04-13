@@ -10,7 +10,9 @@ class sens_mot:
     def sens(self, phrase):
         self.phrase = phrase
 
-        forme = visualisation_table.visualisation(self)
+        rond = visualisation_table.visualisation_rond(self)
+        rectangle = visualisation_table.visualisation_rectangle(self)
+        carre = visualisation_table.visualisation_carre(self)
 
      
         for i in self.phrase:
@@ -27,22 +29,43 @@ class sens_mot:
                     soup = BeautifulSoup(page, "html.parser")      
                     propriete = soup.find("div", {"class":"defbox"})
 
-                    for form in forme:
+                    for form in rond:
                         for j in form:
                             if j == None:
                                 pass
                             else:
-                          
                                 recherche = str(propriete).find(str(j))
-                                #dessin
-
-                                #caisse
-                                #rond
                                 if recherche >= 0:
                                     synonyme.recherche_syno(self,j)
                                     indexage = self.phrase.index(i)
-                                    self.phrase[indexage][0].append(j)
+                                    self.phrase[indexage][0].append('rond')
+                                break
+                            
+                    for form1 in carre: 
+                        for k in form1:
+                            if k == None:
+                                pass
+                            else:
+                                recherche = str(propriete).find(str(k))
+                                if recherche >= 0:
+                                    synonyme.recherche_syno(self,k)
+                                    indexage = self.phrase.index(i)
+                                    self.phrase[indexage][0].append('carre')
+                                break
+                                
+                    for form2 in rectangle: 
+                        for l in form2:
+                            if l == None:
+                                pass
+                            else:
+                                recherche = str(propriete).find(str(l))
+                                if recherche >= 0:
+                                    synonyme.recherche_syno(self,l)
+                                    indexage = self.phrase.index(i)
+                                    self.phrase[indexage][0].append('rectangle')
+                                break
 
+                                    
                     #stockage des synonymes
                     #plus rond dans circulaire
 
@@ -56,38 +79,54 @@ class sens_mot:
         dessous = []
         meme_pos = ['juxtaposées']
         
-
+        liste2 = [[],[],[],[],[],[],[],[],[],[],
+                  [],[],[],[],[],[],[],[],[],[]]
+        
+        c = 0
         for i in self.reponse:
             if i == []:
                 pass
             else:
                 for j in dessus:
          
-                    if i== j:
+                    if i == j:
                         indexage = self.reponse.index(i)
                         self.liste[indexage].append('dessus')
                         
                 for k in dessous:
-                    if i == j:
+                    if i == k:
                         indexage = self.reponse.index(i)
                         self.liste[indexage].append('dessus')
                         
                 for l in meme_pos:
-                    if i == j:
+                    if i == l:
                         indexage = self.reponse.index(i)
                         self.liste[indexage].append('meme_pos')
-
-       
+                 
+            c += 1
+   
         return self.liste
 
 
+    def association_morceau_phrase(self,  liste, reponse):
+        self.reponse = reponse
+        self.liste = liste
+
+        dessus = ['sur']
+        dessous = []
+        meme_pos = ['juxtaposées']
+
+
+        liste2 = [[],[],[],[],[],[],[],[],[],[],
+                  [],[],[],[],[],[],[],[],[],[]]
+
+        nombre = traitement_reponse.traitement_nombre(self, liste)
         
+        print(self.liste)
+        print(self.reponse)
 
 
-
-
-
-
+        
 
 
 
