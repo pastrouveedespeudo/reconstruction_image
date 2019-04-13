@@ -11,7 +11,7 @@ from dessin import *
 #une voiture
 #4 roues juxtaposées sur une caisse
 
-#2 roues avant 2 roues arrière sur une caisse
+#2 roues avant juxtaposées 2 roues arrière juxtaposées sur une caisse
 class main:
  
     def question(self):
