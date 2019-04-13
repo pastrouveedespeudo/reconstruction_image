@@ -75,35 +75,50 @@ class sens_mot:
         self.reponse = reponse
         self.liste = liste
   
+
         dessus = ['sur']
         dessous = []
         meme_pos = ['juxtaposées']
+        devant = ['avant']
+        arriere = ['arrière']
+        #mettre ca en database
         
         liste2 = [[],[],[],[],[],[],[],[],[],[],
                   [],[],[],[],[],[],[],[],[],[]]
         
+
+ 
+        
         c = 0
         for i in self.reponse:
+         
             if i == []:
-                pass
+                c += 1
             else:
+                
                 for j in dessus:
          
                     if i == j:
-                        indexage = self.reponse.index(i)
-                        self.liste[indexage].append('dessus')
+                        self.liste[c].append(['dessus','pos'])
                         
                 for k in dessous:
                     if i == k:
-                        indexage = self.reponse.index(i)
-                        self.liste[indexage].append('dessus')
+                        self.liste[c].append(['dessus','pos'])
                         
                 for l in meme_pos:
                     if i == l:
-                        indexage = self.reponse.index(i)
-                        self.liste[indexage].append('meme_pos')
-                 
-            c += 1
+                        self.liste[c].append(['meme_pos','pos'])
+
+                for m in devant:
+                    if i == m:
+                        self.liste[c].append(['devant','pos'])
+                        
+                for n in arriere:
+                    if i == n:
+                        self.liste[c].append(['arrière','pos'])
+
+    
+                c += 1
    
         return self.liste
 
@@ -115,15 +130,39 @@ class sens_mot:
         dessus = ['sur']
         dessous = []
         meme_pos = ['juxtaposées']
-
+        devant = ['devant']
+        arriere = ['arrière']
+        #mettre ca en database
 
         liste2 = [[],[],[],[],[],[],[],[],[],[],
                   [],[],[],[],[],[],[],[],[],[]]
 
-        nombre = traitement_reponse.traitement_nombre(self, liste)
+        nombre = traitement_reponse.traitement_nombre(self, self.liste)
+        #normalement faut capturer l'adjectif aussi
+
+ 
+        c = 0
+        for i in self.liste:
+            if i == []:
+                pass
+            else:
+                liste2[c].extend(i)
+ 
+                if i[0][1] == 'pos':
+                    c+=1
+
+
+        return liste2
         
-        print(self.liste)
-        print(self.reponse)
+
+
+
+
+
+
+
+
+
 
 
         
