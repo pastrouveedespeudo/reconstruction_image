@@ -60,8 +60,30 @@ class visualisation_table:
 
         return liste
 
+    def visualisation_carre(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select carre from forme_geometrique""")
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
 
+        return liste
+    
+    def visualisation_rond(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select rond from forme_geometrique""")
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
 
+        return liste
+    
+    def visualisation_rectangle(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select rectangle from forme_geometrique""")
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+    
 class suppression_table:
     def suppression(self):
         connexion_database.connexion(self)
