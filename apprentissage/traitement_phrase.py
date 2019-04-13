@@ -123,6 +123,12 @@ class traitement_reponse:
     def traitement_nombre(self, liste):
         self.liste = liste
 
+        dico = {"un":1, "deux":2, "trois":3," quattre":4,
+                "cinq":5, "six":6, "sept":7, "huit":8, "neuf":9,
+                "dix":10}
+
+        
+
 
 
 
